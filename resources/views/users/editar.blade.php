@@ -53,9 +53,9 @@
         <label for="apellidos" class="form-check-label" > Apellidos <br>
         <input type="text"  id ="apellidos" class="form-control" name="apellidos" value="{{$user->apellidos}}" placeholder="Bastias Correa">
          </label>{!! $errors -> first('apellidos', '<span class=help-block>:message</span>') !!}</div>
-         @if(auth()->user()->hasPerfiles(['admin']))
+        
 
-                 <div class="form-group {{ $errors->has('perfiles') ? 'has-error' : ''}}">
+      <div class="form-group {{ $errors->has('perfiles') ? 'has-error' : ''}}">
         <label for="perfiles" class="form-check-label" > Perfil/es <br>
       @foreach ($perfiles as $codigo=>$nombre)
           <div class="form-group">
@@ -72,7 +72,7 @@
     @endforeach
   </label>{!! $errors -> first('perfiles', '<span class=help-block>:message</span>') !!}
   </div>
-  @endif
+
    
 
 
@@ -106,14 +106,7 @@
                </select>{!! $errors -> first('centrodesalud_codigo', '<span class=help-block>:message</span>') !!}
         </div>    
 
-
-
-
                 </div>
-                
-
-
-
 
               </div>
          <hr class="lineaEdit">
