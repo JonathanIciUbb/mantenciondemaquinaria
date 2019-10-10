@@ -51,7 +51,6 @@
                 @if(!auth()->user()->hasPerfiles(['jss']))
                 <th scope="col" class="table1"></th>
                 <th scope="col" class="table1"></th>
-                <th scope="col" class="table1"></th>
                @endif
                 </tr>
       </thead>
@@ -90,18 +89,7 @@
 
 
                     @if(!auth()->user()->hasPerfiles(['jss']))
-                  <td>
-                    <form method="GET" style="display:inline" action="{{ route('ubicaciones.showUbicaciones', $maquinaria->codigo)}}">
-                    @csrf    
-                    
-                        <button type="submit" style="background: #008080;" class="btn btn-block btn-success btn-xs" title="Ver ubicaciones">
-                              <i class="fa fa-map-marker"></i>
-
-                        </button>
-                        
-                    </form>
-
-                    </td>  
+ 
 
                 <td> 
 

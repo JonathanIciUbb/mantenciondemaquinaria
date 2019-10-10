@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Area;
+use App\Sala;
 use App\CentroDeSalud;
 use Carbon\Carbon;
 use DB;
 use App\Http\Requests\AreasStoreRequest;
 use App\Http\Requests\AreasUpdateRequest;
+
 
 class AreasController extends Controller
 {
@@ -110,5 +112,18 @@ class AreasController extends Controller
         $area->visible=0;
         $area->update($request->all());
         return redirect()->route('areas.index')->with('statusDeleted','ÁREA ELIMINADA CON EXITO');
+    }
+
+    /*Función que devuelve las salsa pertenecientes al área seleccionada en el 
+    formulario*/
+    public function getSalass(Request $request){
+        if($request->ajax()){
+            $salas = Sala::where('area_codigo', $request->area_codigo)->get();
+            foreach ($salas as $sala){
+                $salasArray[$sala->codigo] = $sala->nombre;
+
+            }
+            return response()->json($salasArray);   
+        }
     }
 }

@@ -14,7 +14,7 @@
           <!-- general form elements -->
           <div class="box box-warning" >
             <div class="box-header with-border">
-              <h2 class="titulo2">Editar Maquinaria {{ $maquinaria->nombre }}</h2>
+              <h2 class="titulo2">Editar <strong> {{ $maquinaria->nombre }} </strong></h2>
               <hr class="lineaEdit">
 
         <form method="POST" action="{{ route('maquinarias.update' , $maquinaria->codigo)}}">

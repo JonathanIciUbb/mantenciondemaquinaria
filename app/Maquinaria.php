@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Maquinaria extends Model
 {
     //fillable protege al sistema de asignaciones masivas de datos e inyecciones sql.
-    protected $fillable = ['id_general','id_inventario','nombre','descripcion', 'estado','mantenciones_preventivas','tipo_codigo', 'centrodesalud_codigo', 'modelo', 'marca'];
+    protected $fillable = ['id_general','id_inventario','nombre','descripcion', 'estado','mantenciones_preventivas','tipo_codigo', 'centrodesalud_codigo', 'modelo', 'marca', 'area_codigo', 'sala_codigo'];
     protected $primaryKey = 'codigo';
 
 

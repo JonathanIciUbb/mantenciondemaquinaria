@@ -32,7 +32,7 @@ Route::get('maquinaria_pdf', 'MaquinariasController@pdf')->name('maquinarias.pdf
 
 Route::get('mantencionesPreventivas', ['as' => 'maquinarias.mantencionesPreventivas', 'uses' => 'MaquinariasController@mantencionesPreventivas']);
 
-Route::get('/salass', 'UbicacionesController@getSalass');
+Route::get('/salass', 'AreasController@getSalass');
 
 
 

@@ -155,14 +155,5 @@ class UbicacionesController extends Controller
         return redirect()->route('maquinarias.index')->with('statusDeleted','UBICACIÓN ELIMINADA CON ÉXITO');
     }
 
-    public function getSalass(Request $request){
-        if($request->ajax()){
-            $salas = Sala::where('area_codigo', $request->area_codigo)->get();
-            foreach ($salas as $sala){
-                $salasArray[$sala->codigo] = $sala->nombre;
 
-            }
-            return response()->json($salasArray);   
-        }
-    }
 }

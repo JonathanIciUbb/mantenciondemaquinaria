@@ -77,7 +77,7 @@
         <input type="text" name="modelo" class="form-control" value="{{old('modelo')}}">
         </label>{!! $errors -> first('modelo', '<span class=help-block>:message</span>') !!} </div>
 
-                   <div class="form-group {{ $errors->has('area_codigo') ? 'has-error' : ''}}">
+        <div class="form-group {{ $errors->has('area_codigo') ? 'has-error' : ''}}">
          <label for="area">Área</label> <br>
         <select name="area_codigo" id="area" class="form-control">
     @foreach ($areass->get() as $index => $area)
