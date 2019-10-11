@@ -19,7 +19,7 @@
           <div class="box box-primary" >
             <div class="box-header with-border">
             	<br>
-              <h2 class="titulo2" align="center" >Reporte de Solicitudes</h2>
+              <h2 class="titulo2" align="center" >Reporte de Solicitudes2</h2>
               <hr class="linea">
       
       <br>

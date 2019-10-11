@@ -29,7 +29,6 @@
 <div class="login-box">
   <div class="login-logo">
     <img class="imgLogin" src="{{ asset('dist/img/logonuble.png') }}">
-    <a href=""><b>Sistema de</b> Mantención</a>
   </div>
   <div class="login-box-body">
     <p class="login-box-msg"><h2>Reestablecer <b>Contraseña</b></p></h2>

@@ -110,8 +110,6 @@
         <a href="{{ route('maquinarias.index') }}" class="btn btn-warning pull-left"
         role="button"><i class="fa fa-reply" aria-hidden="true"></i> Atrás</a>
 
-        
-      
         <br>
         <br>
         <br>
@@ -130,7 +128,7 @@
               if($.trim(area_codigo) != ''){
                 $.get('../../salass', {area_codigo: area_codigo}, function(salass){
                   $('#salas').empty();
-                  $('#salas').append("<option value=''>Selecciona un área </option>");
+                  $('#salas').append("<option value=''>Selecciona una Sala </option>");
                   $.each(salass, function(index, value){
                     $('#salas').append("<option value='" + index + "'>" + value +  " </option>");
                   });

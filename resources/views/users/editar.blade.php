@@ -54,6 +54,8 @@
         <input type="text"  id ="apellidos" class="form-control" name="apellidos" value="{{$user->apellidos}}" placeholder="Bastias Correa">
          </label>{!! $errors -> first('apellidos', '<span class=help-block>:message</span>') !!}</div>
         
+      @if(auth()->user()->hasPerfiles(['jsss']))
+
 
       <div class="form-group {{ $errors->has('perfiles') ? 'has-error' : ''}}">
         <label for="perfiles" class="form-check-label" > Perfil/es <br>
@@ -73,6 +75,26 @@
   </label>{!! $errors -> first('perfiles', '<span class=help-block>:message</span>') !!}
   </div>
 
+  @else
+
+            <div style=" display:none; " class="form-group {{ $errors->has('perfiles') ? 'has-error' : ''}}">
+        <label for="perfiles" class="form-check-label" > Perfil/es <br>
+      @foreach ($perfiles as $codigo=>$nombre)
+          <div class="form-group">
+              <label>
+                <input 
+                type="checkbox" 
+                class="flat-red" 
+                value="{{$codigo}}" 
+                {{$user->perfiles->pluck('codigo')->contains($codigo) ? 'checked' : ''}}
+                name="perfiles[]" >
+                {{$nombre}}
+               </label>
+          </div>
+    @endforeach
+  </label>{!! $errors -> first('perfiles', '<span class=help-block>:message</span>') !!}
+  </div>
+  @endif
    
 
 

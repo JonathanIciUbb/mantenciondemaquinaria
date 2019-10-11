@@ -114,7 +114,7 @@ class AreasController extends Controller
         return redirect()->route('areas.index')->with('statusDeleted','ÁREA ELIMINADA CON EXITO');
     }
 
-    /*Función que devuelve las salsa pertenecientes al área seleccionada en el 
+    /*Función que devuelve las salas pertenecientes al área seleccionada en el 
     formulario*/
     public function getSalass(Request $request){
         if($request->ajax()){

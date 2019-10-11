@@ -299,10 +299,13 @@ public function emailEmpresaExterna(Request $request, $codigo){
         //guardando en variables los valores que quiero luego pasar a la vista mails
         $userName = auth()->user()->name;
         $maqName = $solicitud->maquinaria->nombre;
+
         $tipoMaquinaria = $solicitud->maquinaria->tipo->nombre;
         $nombreCentro = $solicitud->maquinaria->centrodesalud->nombre;
         $maqCodigo = $solicitud->maquinaria->id_general;
         $ubicacionCentro = $solicitud->maquinaria->centrodesalud->direccion;
+        $areaMaq = $solicitud->maquinaria->area->nombre;
+        $salaMaq = $solicitud->maquinaria->sala->nombre;
         $detalleSolicitud = $solicitud->detalle;
         $cont=0;
         for ($i=0; $i<sizeof($solicitud->maquinaria->convenios);$i++) {
@@ -326,6 +329,8 @@ public function emailEmpresaExterna(Request $request, $codigo){
           'nombreEmpresa' => $nombreEmpresa,
           'detalleSolicitud' => $detalleSolicitud,
           'maqCodigo'=> $maqCodigo,
+          'areaMaq'=> $areaMaq,
+          'salaMaq' => $salaMaq,
       );
       //Hago el recorrido gracias a las relaciones para llegar al correo que necesito de la solicitud actual - maquinaria actual.
 
@@ -338,7 +343,7 @@ public function emailEmpresaExterna(Request $request, $codigo){
         $solicitud->estadosolicitud_codigo='2';
         $solicitud->update($request->all());
 
-      return redirect()->route('solicitudes.index')->with('status','SOLICITUD ENVIADA CON ÉXITO Enviando correo a la empresa externa...');
+      return redirect()->route('solicitudes.index')->with('status','SOLICITUD ENVIADA CON ÉXITO Enviando correo a la entidad correspondiente...');
   }
 
   public function createPreventiva(Request $request,$codigo){

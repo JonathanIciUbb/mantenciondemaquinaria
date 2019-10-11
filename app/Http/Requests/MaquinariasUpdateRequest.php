@@ -25,11 +25,11 @@ class MaquinariasUpdateRequest extends FormRequest
     {
         return [
             'id_general' => 'required',
-            'id_inventario' => 'required',
             'nombre'=> 'required|string',
             'descripcion' => 'required',
-            'mantenciones_preventivas' => 'required',
-              'estado' => 'required'
+            'estado' => 'required',
+            'area_codigo' => 'required',
+            'sala_codigo' => 'required'
         ];
     }
 }

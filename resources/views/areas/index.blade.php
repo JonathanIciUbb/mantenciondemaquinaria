@@ -21,7 +21,7 @@
               <h2 class="titulo">Áreas</h2>
               <br>
                 <a href="{{ route('areas.create') }}" class="btn btn-primary pull-left"
-        role="button"><i class="fa fa-check" aria-hidden="true"></i> Crear Nueva</a>&nbsp
+        role="button"><i class="fa fa-check" aria-hidden="true"></i> Añadir Nueva Área</a>&nbsp
         <br>
         <br>
         

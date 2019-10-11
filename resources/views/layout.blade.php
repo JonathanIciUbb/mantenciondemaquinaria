@@ -152,15 +152,6 @@
         @endif
 
         @if(auth()->user()->hasPerfiles(['admin']))
-        <li><a href="{{route('areas.index')}}"><i class="fa fa-map"></i>Áreas</a></li> 
-        @endif       
-
-
-        @if(auth()->user()->hasPerfiles(['admin']))
-        <li><a href="{{route('salas.index')}}"> <i class="fa fa-plus-circle"></i> Salas</a></li> 
-        @endif
-
-        @if(auth()->user()->hasPerfiles(['admin']))
 
         <li><a href="{{route('ubicaciones.index')}}"><i class="fa fa-crosshairs"></i> Ubicaciones</a></li> 
 
@@ -168,15 +159,23 @@
 
         <li><a href="{{route('solicitudes.index')}}"><i class="fa fa-file"></i>Solicitudes</a></li> 
             
-  @if(auth()->user()->hasPerfiles(['admin', 'jsg', 'jss']))
+        @if(auth()->user()->hasPerfiles(['admin', 'jsg', 'jss']))
         <li><a href="{{route('mantenciones.index')}}"><i class="fa fa-wrench"></i> Mantenciones</a></li>
-       @endif
-    @if(!auth()->user()->hasPerfiles(['jss']))
+        @endif
+        @if(!auth()->user()->hasPerfiles(['jss']))
         <li><a href="{{route('maquinarias.mantencionesPreventivas')}}"><i class="fa fa-plus-square"></i> Mantenciones Preventivas</a></li>
-   @endif
+        @endif
 
         @if(auth()->user()->hasPerfiles(['admin', 'jss']))
         <li><a href="{{route('users.index')}}"><i class="fa fa-users"></i> Usuarios</a></li> 
+        @endif
+        @if(auth()->user()->hasPerfiles(['admin', 'jsg']))
+        <li><a href="{{route('areas.index')}}"><i class="fa fa-map"></i>Áreas</a></li> 
+        @endif       
+
+
+        @if(auth()->user()->hasPerfiles(['admin', 'jsg']))
+        <li><a href="{{route('salas.index')}}"> <i class="fa fa-plus-circle"></i>Salas</a></li> 
         @endif
 
       </ul>

@@ -27,12 +27,13 @@
 
 <div class="col-md-12">
 
-		<form action="{{ route('solicitudes.pdf') }}" method="POST" enctype="multipart/form-data">
+		<form action="{{ route('solicitudes.pdf') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
 		@csrf
 
 		<div class="col-md-12">
 
 	  <div class="row">
+
 			<div class="col-md-4">
 				<div class="form-group">
 					<label for="fechaI" class="text-uppercase">Fecha de Inicio</label>

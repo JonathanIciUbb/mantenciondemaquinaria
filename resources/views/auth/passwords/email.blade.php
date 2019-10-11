@@ -26,7 +26,6 @@
 <div class="login-box">
   <div class="login-logo">
     <img class="imgLogin" src="{{ asset('dist/img/logonuble.png') }}">
-    <a href=""><b>Sistema de</b> Mantención</a>
   </div>
   <div class="col-md-12">
   <div class="login-box-body">

@@ -1,6 +1,9 @@
 @extends('layout')
 
 @section('contenido')
+
+@inject('areass', 'App\Services\Areass')
+
       <ol class="breadcrumb">
         <li><a href="{{ route('maquinarias.index') }}"><i class="fa fa-dashboard"></i> Maquinarias</a></li> 
         <li><a href=""><i ></i> Editar Maquinaria</a></li>
@@ -75,6 +78,24 @@
         <input type="text" name="modelo" class="form-control" value="{{$maquinaria->modelo}}">
         </label>{!! $errors -> first('modelo', '<span class=help-block>:message</span>') !!} </div>
 
+            <div class="form-group {{ $errors->has('area_codigo') ? 'has-error' : ''}}">
+         <label for="area">Área</label> <br>
+        <select name="area_codigo" id="area" class="form-control">
+        <option value="{{$maquinaria->area_codigo}}">{{$maquinaria->area->nombre}}</option>
+    @foreach ($areass->get() as $index => $area)
+
+      <option value="{{ $index }}" {{ $maquinaria->area_codigo == $index ? 'selected' : '' }} >{{$area}}</option>
+    @endforeach
+  </select>{!! $errors -> first('area_codigo', '<span class=help-block>:message</span>') !!}</div>
+
+
+         <div class="form-group {{ $errors->has('sala_codigo') ? 'has-error' : ''}}">
+                <label for="salas" class="form-check-label" >Sala</label> <br>
+                <select  id="salas" data-old="{{old("sala_codigo")}}" name="sala_codigo" class="form-control">
+                  <option value="{{$maquinaria->sala_codigo}}">{{$maquinaria->sala->nombre}}</option>
+          </select>{!! $errors -> first('sala_codigo', '<span class=help-block>:message</span>') !!}
+        </div>
+
 
           <div class="form-group {{ $errors->has('descripcion') ? 'has-error' : ''}}">
         <label for="descripcion" class="form-check-label" >Descripción<br>
@@ -91,8 +112,6 @@
         role="button"><i class="fa fa-reply" aria-hidden="true"></i> Atrás</a>
        <!--12 -->
         </div>
-
-
     </form>
     <br>
 
@@ -100,5 +119,26 @@
           </div>
         </div>
       </div>
+
     </section>
+        @section('script')
+        <script>        
+          $(document).ready(function(){
+            $('#area').on('change', function(){
+              var area_codigo = $(this).val();
+              if($.trim(area_codigo) != ''){
+                $.get('../../salass', {area_codigo: area_codigo}, function(salass){
+                  $('#salas').empty();
+                  $('#salas').append("<option value=''>Selecciona una sala </option>");
+                  $.each(salass, function(index, value){
+                    $('#salas').append("<option value='" + index + "'>" + value +  " </option>");
+                  });
+                });
+              }
+            });
+
+          });
+        </script>
+        @endsection
+
 @stop

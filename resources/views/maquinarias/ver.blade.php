@@ -17,7 +17,7 @@
               <hr class="linea">
               <br>
             
-                        <form method="" action="">
+        <form method="" action="">
         <div class="col-md-12">
           <div class="col-md-6">
 
@@ -51,9 +51,7 @@
 
           <div class="col-md-6">
 
-
-
-                        <div class="form-group">
+        <div class="form-group">
          <label for="id_inventario" class="labelText" > Id Inventario <br>
         <input type="text" name="id_inventario" class="sinborde" value="{{ $maquinaria->id_inventario}}" readonly="readonly">
         </label></div>
@@ -72,9 +70,7 @@
           </div>
         </div>
 
-    </form>
-
-                           
+    </form>                   
         <hr class="linea">
                 <a href="{{ route('maquinarias.index') }}" class="btn btn-warning pull-left"
         role="button"><i class="fa fa-reply" aria-hidden="true"></i> Atrás</a>
