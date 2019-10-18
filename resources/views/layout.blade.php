@@ -52,13 +52,7 @@
         </a>
 
     <!-- Header Navbar -->
-    <nav class="navbar navbar-static-top" role="navigation" style="background: #0f69b4;">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
-  
-          
+    <nav class="navbar navbar-static-top" role="navigation" style="background: #0f69b4;">          
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
 
@@ -77,10 +71,10 @@
 
           <!-- User Account Menu -->
           <li class="dropdown user user-menu">
-                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="/images/{{auth()->user()->avatar}}" class="user-image" alt="User Image">
                 <span class="hidden-xs">{{ auth()->user()->name}}</span>
-              </a>
+                </a>
               <ul class="dropdown-menu">
                 <!-- User image -->
                 <li class="user-header" style="height: 600;">
@@ -91,7 +85,7 @@
 
                     <small>{{ auth()->user()->email}}</small>
                   </p>
-          </li>
+                </li>
           <!-- Control Sidebar Toggle Button -->
                <li class="user-footer">
                   <div class="pull-right">
@@ -353,8 +347,5 @@
         $("#fechaF").datepicker({format: 'dd-mm-yyyy',  endDate: '+0d', weekStart: 1  });
       });
       </script>
-
-
-
 </body>
 </html>

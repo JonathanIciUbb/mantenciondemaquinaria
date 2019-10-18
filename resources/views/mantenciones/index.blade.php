@@ -28,7 +28,7 @@ $maquinarias = Maquinaria::all();
               <br>
               @if(!auth()->user()->hasPerfiles(['jss']))
                         <a href="{{ route('mantenciones.create') }}" class="btn btn-primary pull-left"
-        role="button"><i class="fa fa-check" aria-hidden="true"></i> Crear Nueva</a>&nbsp
+        role="button"><i class="fa fa-check" aria-hidden="true"></i> Registrar Mantención</a>&nbsp
         @endif
         <br>
         <br>

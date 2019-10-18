@@ -4,7 +4,7 @@
 @section('contenido')
       <ol class="breadcrumb">
         <li><a href="{{ route('mantenciones.index') }}"><i class="fa fa-dashboard"></i> Mantenciones</a></li> 
-        <li><a href=""><i ></i> Crear Mantención</a></li>
+        <li><a href=""><i ></i> Registrar Mantención</a></li>
         <li class="active"></li>
       </ol>
 
@@ -70,7 +70,7 @@
           </div>
       
         <hr class="linea">
-        &nbsp&nbsp<button type="submit" class="btn btn-primary"><i class="fa fa-check" aria-hidden="true"></i> Ingresar</button>
+        &nbsp&nbsp<button type="submit" class="btn btn-primary"><i class="fa fa-check" aria-hidden="true"></i> Registrar</button>
 
         <a href="{{ route('mantenciones.index') }}" class="btn btn-warning pull-left"
         role="button"><i class="fa fa-reply" aria-hidden="true"></i> Atrás</a>
